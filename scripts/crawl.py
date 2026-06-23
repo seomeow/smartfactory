@@ -37,10 +37,16 @@ def crawl():
             if isinstance(data, list):
                 rows = data
             elif isinstance(data, dict):
-                for key in ["list", "items", "content", "data", "result", "rows"]:
-                    if key in data:
-                        rows = data[key]
-                        break
+                # modelAndView.model.pbancList 구조 대응
+                try:
+                    rows = data["modelAndView"]["model"]["pbancList"]
+                except (KeyError, TypeError):
+                    pass
+                if not rows:
+                    for key in ["list", "items", "content", "data", "result", "rows", "pbancList"]:
+                        if key in data:
+                            rows = data[key]
+                            break
 
             if rows:
                 print(f"  → {len(rows)}건 발견")
