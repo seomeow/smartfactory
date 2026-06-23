@@ -37,7 +37,7 @@ def crawl():
     seen = set()
 
     # 접수중 + 접수예정만 수집
-    for status_code in ["ING", "YET"]:
+    for status_code in ["ING"]:
         page = 1
         while True:
             rows, total = fetch_page(status_code, page)
