@@ -36,21 +36,23 @@ def crawl():
     results = []
     seen = set()
 
-    # 전체 공고 페이지네이션으로 전부 수집
-    page = 1
-    while True:
-        rows, total = fetch_page("", page)
-        print(f"[전체] 페이지 {page} → {len(rows)}건 (전체 {total}건)")
-        if not rows:
-            break
-        for row in rows:
-            sn = str(row.get("pbancSn") or row.get("pbancId") or "")
-            if sn and sn not in seen:
-                seen.add(sn)
-                results.append(parse_row(row))
-        if len(seen) >= total:
-            break
-        page += 1
+    # 접수중 + 접수예정만 수집
+    for status_code in ["ING", "YET"]:
+        page = 1
+        while True:
+            rows, total = fetch_page(status_code, page)
+            label = "접수중" if status_code == "ING" else "접수예정"
+            print(f"[{label}] 페이지 {page} → {len(rows)}건 (전체 {total}건)")
+            if not rows:
+                break
+            for row in rows:
+                sn = str(row.get("pbancSn") or row.get("pbancId") or "")
+                if sn and sn not in seen:
+                    seen.add(sn)
+                    results.append(parse_row(row))
+            if len(seen) >= total or len(rows) < PAGE_SIZE:
+                break
+            page += 1
 
     # 상태별 카운트 계산
     open_count = sum(1 for r in results if r["status"] == "접수중")
