@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23 14:12",
+  "updated_at": "2026-06-23 14:28",
   "count": 5,
   "open_count": 4,
   "soon_count": 1,
@@ -10,35 +10,35 @@
       "status": "접수중",
       "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc?pbancId=2026-N-0110"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc?pbancId=2026-N-0110"
     },
     {
       "title": "[대구] AI솔루션 실증 지원(단일 실증)",
       "status": "접수중",
       "start": "2026-06-23 06:00 ~ 2026-07-08 18:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc?pbancId=2026-N-0077"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc?pbancId=2026-N-0077"
     },
     {
       "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)",
       "status": "접수중",
       "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc?pbancId=2026-N-0110"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc?pbancId=2026-N-0110"
     },
     {
       "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(기초)",
       "status": "접수중",
       "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc?pbancId=2026-N-0110"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc?pbancId=2026-N-0110"
     },
     {
       "title": "[2차] 2026 AI 트랙 (삼성) 스마트공장 구축",
       "status": "접수예정",
       "start": "2026-07-06 09:00 ~ 2026-07-16 18:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc?pbancId=2026-N-0062"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc?pbancId=2026-N-0062"
     }
   ]
 }
