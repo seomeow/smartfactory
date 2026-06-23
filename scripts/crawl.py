@@ -50,7 +50,7 @@ def crawl():
                 if sn and sn not in seen:
                     seen.add(sn)
                     results.append(parse_row(row))
-            if len(results) >= total or not rows:
+            if len(seen) >= total or len(rows) < PAGE_SIZE:
                 break
             page += 1
 
