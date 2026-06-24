@@ -40,36 +40,21 @@ def fetch_page(status_code="", page=1):
 
 def crawl():
     results = []
-    seen = set()
 
-    page = 1
-    while True:
-        rows, total = fetch_page("ING", page)
-        print(f"[접수중] 페이지 {page} → {len(rows)}건 (전체 {total}건)")
+    # totalPageCount 먼저 확인
+    _, total = fetch_page("ING", 1)
+    total_pages = -(-total // 10)  # 올림 나눗셈
+    print(f"전체 {total}건, {total_pages}페이지")
 
-        if not rows:
-            break
-
-        prev = len(seen)
+    for page in range(1, total_pages + 1):
+        rows, _ = fetch_page("ING", page)
+        print(f"[접수중] 페이지 {page} → {len(rows)}건")
         for row in rows:
-            sn = str(row.get("pbancSn") or row.get("pbancId") or "")
-            if sn and sn not in seen:
-                seen.add(sn)
-                results.append(parse_row(row))
+            results.append(parse_row(row))
 
-        # 새로 추가된 게 없으면 서버가 같은 페이지 반복하는 것 → 중단
-        if len(seen) == prev:
-            print(f"새 데이터 없음 → 중단 (총 {len(results)}건)")
-            break
-
-        if len(results) >= total:
-            break
-
-        page += 1
-
-    # 상태별 카운트 계산
-    open_count = sum(1 for r in results if r["status"] == "접수중")
-    soon_count = sum(1 for r in results if r["status"] == "접수예정")
+    # 상태별 카운트
+    open_count   = sum(1 for r in results if r["status"] == "접수중")
+    soon_count   = sum(1 for r in results if r["status"] == "접수예정")
     closed_count = sum(1 for r in results if r["status"] == "마감")
 
     output = {
