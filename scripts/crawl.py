@@ -1,7 +1,7 @@
 import json
 import os
 import requests
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 BASE_URL = "https://www.smart-factory.kr"
 API_URL  = f"{BASE_URL}/usr/bg/ba/ma/bsnsPbanc/selectBsnsPbancPage.do"
@@ -58,7 +58,7 @@ def crawl():
     closed_count = sum(1 for r in results if r["status"] == "마감")
 
     output = {
-        "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "updated_at": datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d %H:%M KST"),
         "count": len(results),
         "open_count": open_count,
         "soon_count": soon_count,
