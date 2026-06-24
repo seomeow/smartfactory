@@ -91,11 +91,11 @@ def parse_row(row: dict) -> dict:
     # 상세 링크 - pbancId 파라미터 방식과 경로 방식 둘 다 시도
     pbancId = row.get("pbancId") or ""
     if pbancId:
-        link = f"{BASE_URL}/usr/bg/ba/ma/bsnsPbanc?pbancId={pbancId}"
+        link = f"{BASE_URL}/usr/bg/ba/ma/bsnsPbancDtl?pbancId={pbancId}"
     elif sn:
-        link = f"{BASE_URL}/usr/bg/ba/ma/bsnsPbanc?pbancSn={sn}"
+        link = f"{BASE_URL}/usr/bg/ba/ma/bsnsPbancDtl?pbancSn={sn}"
     else:
-        link = f"{BASE_URL}/usr/bg/ba/ma/bsnsPbanc"
+        link = f"{BASE_URL}/usr/bg/ba/ma/bsnsPbancDtl"
 
     return {
         "title":  title,
