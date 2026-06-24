@@ -36,23 +36,30 @@ def crawl():
     results = []
     seen = set()
 
-    # 접수중 + 접수예정만 수집
-    for status_code in ["ING"]:
-        page = 1
-        while True:
-            rows, total = fetch_page(status_code, page)
-            label = "접수중" if status_code == "ING" else "접수예정"
-            print(f"[{label}] 페이지 {page} → {len(rows)}건 (전체 {total}건)")
-            if not rows:
-                break
-            for row in rows:
-                sn = str(row.get("pbancSn") or row.get("pbancId") or "")
-                if sn and sn not in seen:
-                    seen.add(sn)
-                    results.append(parse_row(row))
-            if len(results) >= total or len(rows) < 10:
-                break
-            page += 1
+    page = 1
+    while True:
+        rows, total = fetch_page("ING", page)
+        print(f"[접수중] 페이지 {page} → {len(rows)}건 (전체 {total}건)")
+
+        if not rows:
+            break
+
+        prev = len(seen)
+        for row in rows:
+            sn = str(row.get("pbancSn") or row.get("pbancId") or "")
+            if sn and sn not in seen:
+                seen.add(sn)
+                results.append(parse_row(row))
+
+        # 새로 추가된 게 없으면 서버가 같은 페이지 반복하는 것 → 중단
+        if len(seen) == prev:
+            print(f"새 데이터 없음 → 중단 (총 {len(results)}건)")
+            break
+
+        if len(results) >= total:
+            break
+
+        page += 1
 
     # 상태별 카운트 계산
     open_count = sum(1 for r in results if r["status"] == "접수중")
