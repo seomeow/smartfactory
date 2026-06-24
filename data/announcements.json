@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-06-23 14:28",
+  "updated_at": "2026-06-24 12:10",
   "count": 5,
   "open_count": 4,
   "soon_count": 1,
   "closed_count": 0,
   "items": [
     {
+      "title": "[현대자동차 그룹] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
+      "status": "접수중",
+      "start": "2026-06-22 00:00 ~ 2026-06-30 23:50",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc?pbancId=2026-N-0124"
+    },
+    {
       "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)",
       "status": "접수중",
       "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc?pbancId=2026-N-0110"
-    },
-    {
-      "title": "[대구] AI솔루션 실증 지원(단일 실증)",
-      "status": "접수중",
-      "start": "2026-06-23 06:00 ~ 2026-07-08 18:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc?pbancId=2026-N-0077"
     },
     {
       "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)",
