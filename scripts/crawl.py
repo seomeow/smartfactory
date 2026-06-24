@@ -98,11 +98,13 @@ def parse_row(row: dict) -> dict:
         link = f"{BASE_URL}/usr/bg/ba/ma/bsnsPbancDtl"
 
     return {
-        "title":  title,
-        "status": status,
-        "start":  start,
-        "end":    end,
-        "link":   link,
+        "title":   title,
+        "status":  status,
+        "start":   start,
+        "end":     end,
+        "link":    link,
+        "pbancId": pbancId,
+        "pbancSn": sn,
     }
 
 
