@@ -5,856 +5,622 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>스마트공장 사업공고 대시보드</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Pretendard','Apple SD Gothic Neo',sans-serif; background:#f4f6f9; color:#222; min-height:100vh; }
-    header { background:linear-gradient(135deg,#1a4fa0,#2d7dd2); color:white; padding:28px 40px; }
-    header h1 { font-size:1.6rem; font-weight:700; margin-bottom:6px; }
-    header p { font-size:0.85rem; opacity:0.8; }
-    .stats { display:flex; gap:16px; padding:24px 40px; background:white; border-bottom:1px solid #e0e0e0; }
-    .stat-card { background:#f8faff; border:1px solid #d0dff5; border-radius:10px; padding:14px 24px; text-align:center; min-width:120px; }
-    .stat-card .num { font-size:2rem; font-weight:800; color:#1a4fa0; }
-    .stat-card .label { font-size:0.78rem; color:#666; margin-top:4px; }
-    .toolbar { padding:16px 40px; display:flex; align-items:center; gap:12px; }
-    .toolbar input { padding:8px 14px; border:1px solid #ccc; border-radius:6px; font-size:0.9rem; width:260px; }
-    .toolbar select { padding:8px 12px; border:1px solid #ccc; border-radius:6px; font-size:0.9rem; background:white; }
-    .container { padding:0 40px 40px; }
-    table { width:100%; border-collapse:collapse; background:white; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.07); }
-    thead { background:#1a4fa0; color:white; }
-    thead th { padding:14px 16px; font-size:0.85rem; font-weight:600; text-align:left; }
-    tbody tr { border-bottom:1px solid #f0f0f0; transition:background 0.15s; }
-    tbody tr:hover { background:#f5f8ff; }
-    td { padding:14px 16px; font-size:0.88rem; vertical-align:middle; }
-    td.num { color:#999; width:50px; text-align:center; }
-    td.title a { color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.5; }
-    td.title a:hover { color:#1a4fa0; text-decoration:underline; }
-    td.period { color:#555; font-size:0.82rem; white-space:nowrap; }
-    .badge { display:inline-block; padding:4px 10px; border-radius:20px; font-size:0.78rem; font-weight:600; white-space:nowrap; }
-    .badge.open   { background:#e6f7ee; color:#1a7a40; }
-    .badge.soon   { background:#e8f0fe; color:#1a4fa0; }
-    .badge.closed { background:#f0f0f0; color:#777; }
-    .badge.etc    { background:#fafafa; color:#999; }
-    .btn-detail { display:inline-block; padding:5px 12px; background:#1a4fa0; color:white; border-radius:5px; font-size:0.78rem; border:none; cursor:pointer; white-space:nowrap; }
-    .btn-detail:hover { background:#153d80; }
-    td.empty { text-align:center; padding:40px; color:#aaa; }
-    .source-link { text-align:right; padding:16px 40px; font-size:0.8rem; color:#999; }
-    .source-link a { color:#1a4fa0; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Pretendard','Apple SD Gothic Neo',sans-serif;background:#eef2f7;color:#1a1a1a;min-height:100vh;}
 
-    /* 모달 */
-    .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center; }
-    .modal-overlay.active { display:flex; }
-    .modal { background:white; border-radius:16px; width:90%; max-width:720px; max-height:85vh; overflow-y:auto; box-shadow:0 8px 40px rgba(0,0,0,0.2); }
-    .modal-header { padding:24px 28px 16px; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; }
-    .modal-header h2 { font-size:1.05rem; font-weight:700; line-height:1.5; color:#111; }
-    .modal-close { background:none; border:none; font-size:1.5rem; cursor:pointer; color:#999; flex-shrink:0; }
-    .modal-close:hover { color:#333; }
-    .modal-body { padding:24px 28px; }
-    .modal-body .loading { text-align:center; color:#999; padding:40px 0; }
-    .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
-    .detail-item { background:#f8faff; border-radius:8px; padding:14px 16px; }
-    .detail-item .label { font-size:0.75rem; color:#888; margin-bottom:4px; }
-    .detail-item .value { font-size:0.9rem; font-weight:600; color:#111; }
-    .detail-desc { background:#f8f8f8; border-radius:8px; padding:16px; font-size:0.88rem; line-height:1.7; color:#333; white-space:pre-wrap; word-break:break-all; }
-    .modal-footer { padding:16px 28px 24px; display:flex; justify-content:flex-end; gap:10px; }
-    .btn-site { padding:9px 20px; background:#1a4fa0; color:white; border-radius:6px; text-decoration:none; font-size:0.88rem; font-weight:600; }
-    .btn-site:hover { background:#153d80; }
-    .btn-cancel { padding:9px 20px; background:#f0f0f0; color:#555; border:none; border-radius:6px; font-size:0.88rem; cursor:pointer; }
+    /* 헤더 */
+    header{background:linear-gradient(135deg,#0f3470,#1a6fd4);color:white;padding:28px 40px;display:flex;justify-content:space-between;align-items:center;}
+    header h1{font-size:1.5rem;font-weight:800;letter-spacing:-0.5px;}
+    header p{font-size:0.8rem;opacity:0.75;margin-top:5px;}
+    .btn-official{padding:10px 20px;background:white;color:#1a4fa0;border-radius:8px;font-size:0.85rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:all 0.2s;}
+    .btn-official:hover{background:#e8f0fe;}
 
-    @media (max-width:768px) {
-      header,.stats,.toolbar,.container,.source-link { padding-left:16px; padding-right:16px; }
-      .stats { flex-wrap:wrap; }
-      thead th:nth-child(1), thead th:nth-child(4), td.num, td.period { display:none; }
-      .detail-grid { grid-template-columns:1fr; }
+    /* KPI 카드 */
+    .kpi-section{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:24px 40px;}
+    .kpi-card{background:white;border-radius:14px;padding:20px 24px;box-shadow:0 2px 10px rgba(0,0,0,0.06);display:flex;align-items:center;gap:16px;}
+    .kpi-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+    .kpi-icon.blue{background:#e8f0fe;}
+    .kpi-icon.green{background:#e6f7ee;}
+    .kpi-icon.orange{background:#fff4e6;}
+    .kpi-icon.purple{background:#f3eeff;}
+    .kpi-num{font-size:1.9rem;font-weight:900;line-height:1;}
+    .kpi-num.blue{color:#1a4fa0;}
+    .kpi-num.green{color:#1a7a40;}
+    .kpi-num.orange{color:#d4720a;}
+    .kpi-num.purple{color:#6b3fa0;}
+    .kpi-label{font-size:0.78rem;color:#888;margin-top:3px;}
+
+    /* 필터 툴바 */
+    .toolbar{background:white;margin:0 40px 20px;border-radius:12px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+    .toolbar input{padding:8px 14px;border:1.5px solid #dde3ef;border-radius:8px;font-size:0.88rem;width:240px;outline:none;transition:border 0.2s;}
+    .toolbar input:focus{border-color:#1a4fa0;}
+    .toolbar select{padding:8px 12px;border:1.5px solid #dde3ef;border-radius:8px;font-size:0.88rem;background:white;outline:none;cursor:pointer;}
+    .toolbar select:focus{border-color:#1a4fa0;}
+    .filter-label{font-size:0.78rem;color:#888;font-weight:600;}
+    .btn-reset{padding:8px 14px;background:#f0f0f0;border:none;border-radius:8px;font-size:0.82rem;color:#555;cursor:pointer;}
+    .btn-reset:hover{background:#e0e0e0;}
+    .result-count{margin-left:auto;font-size:0.82rem;color:#888;}
+
+    /* 테이블 */
+    .table-wrap{margin:0 40px 40px;background:white;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);overflow:hidden;}
+    .table-scroll{max-height:520px;overflow-y:auto;}
+    .table-scroll::-webkit-scrollbar{width:6px;}
+    .table-scroll::-webkit-scrollbar-thumb{background:#c5d0e0;border-radius:3px;}
+    table{width:100%;border-collapse:collapse;}
+    thead{position:sticky;top:0;z-index:10;}
+    thead tr{background:#1a4fa0;color:white;}
+    thead th{padding:13px 16px;font-size:0.82rem;font-weight:600;text-align:left;white-space:nowrap;}
+    tbody tr{border-bottom:1px solid #f0f4fa;transition:background 0.12s;}
+    tbody tr:last-child{border-bottom:none;}
+    tbody tr:hover{background:#f5f8ff;}
+    td{padding:13px 16px;font-size:0.86rem;vertical-align:middle;}
+    td.num{color:#bbb;width:44px;text-align:center;font-size:0.78rem;}
+    td.title{font-weight:500;line-height:1.5;color:#1a1a1a;max-width:380px;}
+    td.period{color:#555;font-size:0.8rem;white-space:nowrap;}
+    .tag-org{display:inline-block;padding:3px 9px;background:#eef2f7;color:#556;border-radius:20px;font-size:0.75rem;font-weight:600;}
+    .badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:0.76rem;font-weight:700;white-space:nowrap;}
+    .badge.open{background:#e6f7ee;color:#1a7a40;}
+    .badge.soon{background:#e8f0fe;color:#1a4fa0;}
+    .badge.closed{background:#f0f0f0;color:#999;}
+    .badge.etc{background:#fafafa;color:#bbb;}
+    td.empty{text-align:center;padding:60px;color:#bbb;font-size:0.9rem;}
+
+    /* 하단 */
+    .footer{text-align:center;padding:20px;font-size:0.78rem;color:#aaa;}
+    .footer a{color:#1a4fa0;}
+
+    @media(max-width:900px){
+      .kpi-section{grid-template-columns:1fr 1fr;padding:16px;}
+      header,.toolbar,.table-wrap{padding-left:16px;padding-right:16px;margin-left:0;margin-right:0;}
+      .toolbar{margin:0 0 16px;border-radius:0;}
+      .table-wrap{margin:0 0 24px;border-radius:0;}
+      thead th:nth-child(1),td.num{display:none;}
+      td.title{max-width:200px;}
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>🏭 스마트공장 사업공고 대시보드</h1>
-  <p>smart-factory.kr 공식 사업공고를 자동 수집합니다 · 최종 업데이트: 2026-06-24 21:45 KST</p>
+  <div>
+    <h1>🏭 스마트공장 사업공고 대시보드</h1>
+    <p>smart-factory.kr 공식 공고를 매일 자동 수집 · 최종 업데이트: 2026-06-24 21:53 KST</p>
+  </div>
+  <a class="btn-official" href="https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc" target="_blank">📋 공식 공고 목록 →</a>
 </header>
 
-<div class="stats">
-  <div class="stat-card">
-    <div class="num">54</div>
-    <div class="label">전체 공고</div>
+<!-- KPI -->
+<div class="kpi-section">
+  <div class="kpi-card">
+    <div class="kpi-icon blue">📋</div>
+    <div>
+      <div class="kpi-num blue">54</div>
+      <div class="kpi-label">전체 접수중 공고</div>
+    </div>
   </div>
-  <div class="stat-card">
-    <div class="num" style="color:#1a7a40">51</div>
-    <div class="label">🟢 접수중</div>
+  <div class="kpi-card">
+    <div class="kpi-icon green">✅</div>
+    <div>
+      <div class="kpi-num green">51</div>
+      <div class="kpi-label">접수중</div>
+    </div>
   </div>
-  <div class="stat-card">
-    <div class="num" style="color:#2d7dd2">3</div>
-    <div class="label">🔵 접수예정</div>
+  <div class="kpi-card">
+    <div class="kpi-icon orange">🔔</div>
+    <div>
+      <div class="kpi-num orange">3</div>
+      <div class="kpi-label">접수예정</div>
+    </div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-icon purple">⏰</div>
+    <div>
+      <div class="kpi-num purple">30</div>
+      <div class="kpi-label">이달 마감</div>
+    </div>
   </div>
 </div>
 
+<!-- 필터 -->
 <div class="toolbar">
-  <input type="text" id="searchInput" placeholder="🔍 공고명 검색..." oninput="filterTable()">
-  <select id="statusFilter" onchange="filterTable()">
+  <span class="filter-label">🔍</span>
+  <input type="text" id="searchInput" placeholder="공고명 검색..." oninput="applyFilter()">
+  <select id="statusFilter" onchange="applyFilter()">
     <option value="">전체 상태</option>
     <option value="접수중">🟢 접수중</option>
     <option value="접수예정">🔵 접수예정</option>
-    <option value="마감">⚫ 마감</option>
   </select>
+  <select id="yearFilter" onchange="applyFilter()">
+    <option value="">전체 연도</option>
+    <option value="2026">2026년</option>
+<option value="기타">기타년</option>
+  </select>
+  <select id="orgFilter" onchange="applyFilter()">
+    <option value="">전체 주관기관</option>
+    <option value="2차">2차</option>
+<option value="CJ올리브네트웍스">CJ올리브네트웍스</option>
+<option value="LG CNS">LG CNS</option>
+<option value="LG전자">LG전자</option>
+<option value="LS일렉트릭">LS일렉트릭</option>
+<option value="강원">강원</option>
+<option value="경기">경기</option>
+<option value="경기북부">경기북부</option>
+<option value="경남">경남</option>
+<option value="경북">경북</option>
+<option value="공고">공고</option>
+<option value="기타">기타</option>
+<option value="대구">대구</option>
+<option value="메가존">메가존</option>
+<option value="미라콤">미라콤</option>
+<option value="부산">부산</option>
+<option value="삼성전자">삼성전자</option>
+<option value="서울">서울</option>
+<option value="인천">인천</option>
+<option value="전남">전남</option>
+<option value="전북">전북</option>
+<option value="제주">제주</option>
+<option value="충남">충남</option>
+<option value="충북">충북</option>
+<option value="코오롱베니트">코오롱베니트</option>
+<option value="포스코DX">포스코DX</option>
+<option value="포항">포항</option>
+<option value="한국네트웍스">한국네트웍스</option>
+<option value="한솔PNS">한솔PNS</option>
+<option value="현대자동차 그룹">현대자동차 그룹</option>
+<option value="현대자동차그룹">현대자동차그룹</option>
+  </select>
+  <select id="regionFilter" onchange="applyFilter()">
+    <option value="">전체 지역</option>
+    <option value="강원">강원</option>
+<option value="경기">경기</option>
+<option value="경남">경남</option>
+<option value="경북">경북</option>
+<option value="대구">대구</option>
+<option value="부산">부산</option>
+<option value="서울">서울</option>
+<option value="인천">인천</option>
+<option value="전국/기타">전국/기타</option>
+<option value="전남">전남</option>
+<option value="전북">전북</option>
+<option value="제주">제주</option>
+<option value="충남">충남</option>
+<option value="충북">충북</option>
+  </select>
+  <button class="btn-reset" onclick="resetFilter()">초기화</button>
+  <span class="result-count" id="resultCount">54건</span>
 </div>
 
-<div class="container">
-  <table id="mainTable">
-    <thead>
-      <tr>
-        <th style="width:50px">No.</th>
-        <th>공고명</th>
-        <th style="width:120px">상태</th>
-        <th style="width:200px">접수기간</th>
-        <th style="width:90px">상세보기</th>
-      </tr>
-    </thead>
-    <tbody id="tableBody">
-      
+<!-- 테이블 -->
+<div class="table-wrap">
+  <div class="table-scroll">
+    <table id="mainTable">
+      <thead>
         <tr>
+          <th style="width:44px">No.</th>
+          <th>공고명</th>
+          <th style="width:110px">상태</th>
+          <th style="width:210px">접수기간</th>
+          <th style="width:130px">주관기관</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr data-status="접수중" data-org="현대자동차 그룹" data-year="2026" data-region="전국/기타">
             <td class="num">1</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0124','1','[현대자동차 그룹] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[현대자동차 그룹] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[현대자동차 그룹] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-22 00:00 ~ 2026-06-30 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0124','1','[현대자동차 그룹] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">현대자동차 그룹</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="현대자동차그룹" data-year="기타" data-region="전국/기타">
             <td class="num">2</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0110','2','[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)'); return false;">[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)</a>
-            </td>
+            <td class="title">[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-22 00:00 ~ 2026-07-21 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0110','2','[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">현대자동차그룹</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="현대자동차그룹" data-year="기타" data-region="전국/기타">
             <td class="num">3</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0110','4','[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)'); return false;">[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)</a>
-            </td>
+            <td class="title">[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-22 00:00 ~ 2026-07-21 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0110','4','[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">현대자동차그룹</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="현대자동차그룹" data-year="기타" data-region="전국/기타">
             <td class="num">4</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0110','5','[현대자동차그룹]2026 대중소상생형 스마트공장 구축(기초)'); return false;">[현대자동차그룹]2026 대중소상생형 스마트공장 구축(기초)</a>
-            </td>
+            <td class="title">[현대자동차그룹]2026 대중소상생형 스마트공장 구축(기초)</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-22 00:00 ~ 2026-07-21 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0110','5','[현대자동차그룹]2026 대중소상생형 스마트공장 구축(기초)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">현대자동차그룹</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="대구" data-year="기타" data-region="대구">
             <td class="num">5</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0077','1','[대구] AI솔루션 실증 지원(단일 실증)'); return false;">[대구] AI솔루션 실증 지원(단일 실증)</a>
-            </td>
+            <td class="title">[대구] AI솔루션 실증 지원(단일 실증)</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-23 06:00 ~ 2026-07-08 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0077','1','[대구] AI솔루션 실증 지원(단일 실증)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">대구</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="전국/기타">
             <td class="num">6</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0121','1','2026년「푸드테크 스마트 제조 기반 구축」사업 공고(기초)_4차 재공고'); return false;">2026년「푸드테크 스마트 제조 기반 구축」사업 공고(기초)_4차 재공고</a>
-            </td>
+            <td class="title">2026년「푸드테크 스마트 제조 기반 구축」사업 공고(기초)_4차 재공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-17 09:00 ~ 2026-07-17 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0121','1','2026년「푸드테크 스마트 제조 기반 구축」사업 공고(기초)_4차 재공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="삼성전자" data-year="2026" data-region="전국/기타">
             <td class="num">7</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0062','2','[삼성전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[삼성전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[삼성전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-17 17:00 ~ 2026-06-30 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0062','2','[삼성전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">삼성전자</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수예정" data-org="2차" data-year="기타" data-region="전국/기타">
             <td class="num">8</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0062','3','[2차] 2026 AI 트랙 (삼성) 스마트공장 구축'); return false;">[2차] 2026 AI 트랙 (삼성) 스마트공장 구축</a>
-            </td>
+            <td class="title">[2차] 2026 AI 트랙 (삼성) 스마트공장 구축</td>
             <td><span class="badge soon">🔵 접수예정</span></td>
             <td class="period">2026-07-06 09:00 ~ 2026-07-16 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0062','3','[2차] 2026 AI 트랙 (삼성) 스마트공장 구축')">상세보기</button>
-            </td>
+            <td><span class="tag-org">2차</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="메가존" data-year="2026" data-region="전국/기타">
             <td class="num">9</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0117','1','[메가존] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[메가존] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[메가존] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-17 17:00 ~ 2026-06-30 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0117','1','[메가존] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">메가존</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="LG CNS" data-year="2026" data-region="전국/기타">
             <td class="num">10</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0116','1','[LG CNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[LG CNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[LG CNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-17 17:00 ~ 2026-06-30 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0116','1','[LG CNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">LG CNS</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="포스코DX" data-year="2026" data-region="전국/기타">
             <td class="num">11</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0113','1','[포스코DX] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[포스코DX] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[포스코DX] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 09:00 ~ 2026-06-30 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0113','1','[포스코DX] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">포스코DX</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="대구">
             <td class="num">12</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0109','1','2026년 대구지역 스마트공장 구축(기초단계)지원 사업'); return false;">2026년 대구지역 스마트공장 구축(기초단계)지원 사업</a>
-            </td>
+            <td class="title">2026년 대구지역 스마트공장 구축(기초단계)지원 사업</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 09:00 ~ 2026-06-26 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0109','1','2026년 대구지역 스마트공장 구축(기초단계)지원 사업')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="전북">
             <td class="num">13</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0112','1','2026년 전북형 스마트 제조혁신 프로젝트 추가모집 (JS1-일반과제)'); return false;">2026년 전북형 스마트 제조혁신 프로젝트 추가모집 (JS1-일반과제)</a>
-            </td>
+            <td class="title">2026년 전북형 스마트 제조혁신 프로젝트 추가모집 (JS1-일반과제)</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 09:00 ~ 2026-07-10 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0112','1','2026년 전북형 스마트 제조혁신 프로젝트 추가모집 (JS1-일반과제)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="전북">
             <td class="num">14</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0112','2','2026년 전북형 스마트 제조혁신 프로젝트 추가모집 (JS1-간편자동화과제)'); return false;">2026년 전북형 스마트 제조혁신 프로젝트 추가모집 (JS1-간편자동화과제)</a>
-            </td>
+            <td class="title">2026년 전북형 스마트 제조혁신 프로젝트 추가모집 (JS1-간편자동화과제)</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 09:00 ~ 2026-07-10 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0112','2','2026년 전북형 스마트 제조혁신 프로젝트 추가모집 (JS1-간편자동화과제)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="미라콤" data-year="2026" data-region="전국/기타">
             <td class="num">15</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0114','1','[미라콤] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[미라콤] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[미라콤] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 09:00 ~ 2026-06-30 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0114','1','[미라콤] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">미라콤</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="LS일렉트릭" data-year="2026" data-region="전국/기타">
             <td class="num">16</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0115','1','[LS일렉트릭] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[LS일렉트릭] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[LS일렉트릭] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 09:00 ~ 2026-06-30 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0115','1','[LS일렉트릭] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">LS일렉트릭</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="LG전자" data-year="2026" data-region="전국/기타">
             <td class="num">17</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0118','1','[LG전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[LG전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[LG전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 00:00 ~ 2026-06-30 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0118','1','[LG전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">LG전자</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="CJ올리브네트웍스" data-year="2026" data-region="전국/기타">
             <td class="num">18</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0119','1','[CJ올리브네트웍스] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[CJ올리브네트웍스] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[CJ올리브네트웍스] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 00:00 ~ 2026-06-30 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0119','1','[CJ올리브네트웍스] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">CJ올리브네트웍스</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="한국네트웍스" data-year="2026" data-region="전국/기타">
             <td class="num">19</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0120','1','[한국네트웍스] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[한국네트웍스] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[한국네트웍스] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 09:00 ~ 2026-06-30 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0120','1','[한국네트웍스] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">한국네트웍스</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="코오롱베니트" data-year="2026" data-region="전국/기타">
             <td class="num">20</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0122','1','[코오롱베니트] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[코오롱베니트] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[코오롱베니트] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 00:00 ~ 2026-06-30 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0122','1','[코오롱베니트] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">코오롱베니트</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="한솔PNS" data-year="2026" data-region="전국/기타">
             <td class="num">21</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0123','1','[한솔PNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고'); return false;">[한솔PNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</a>
-            </td>
+            <td class="title">[한솔PNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-15 00:00 ~ 2026-06-30 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0123','1','[한솔PNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">한솔PNS</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="제주" data-year="2026" data-region="제주">
             <td class="num">22</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0111','1','[제주] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고'); return false;">[제주] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[제주] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-12 09:00 ~ 2026-07-31 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0111','1','[제주] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">제주</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="경남">
             <td class="num">23</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0107','1','2026년 경남 산업안전AI 스마트공장 구축 지원사업 공고'); return false;">2026년 경남 산업안전AI 스마트공장 구축 지원사업 공고</a>
-            </td>
+            <td class="title">2026년 경남 산업안전AI 스마트공장 구축 지원사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-08 18:00 ~ 2026-07-13 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0107','1','2026년 경남 산업안전AI 스마트공장 구축 지원사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="충북">
             <td class="num">24</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0106','1','(충북) 2026년 제조 AI 현장 적용 지원 사업'); return false;">(충북) 2026년 제조 AI 현장 적용 지원 사업</a>
-            </td>
+            <td class="title">(충북) 2026년 제조 AI 현장 적용 지원 사업</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-01 00:00 ~ 2026-07-08 23:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0106','1','(충북) 2026년 제조 AI 현장 적용 지원 사업')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="경북">
             <td class="num">25</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0100','1','2026년도 경북 지역특화형(고도화) 스마트공장 구축사업 공고(방산, 모빌리티)'); return false;">2026년도 경북 지역특화형(고도화) 스마트공장 구축사업 공고(방산, 모빌리티)</a>
-            </td>
+            <td class="title">2026년도 경북 지역특화형(고도화) 스마트공장 구축사업 공고(방산, 모빌리티)</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-22 09:00 ~ 2026-07-03 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0100','1','2026년도 경북 지역특화형(고도화) 스마트공장 구축사업 공고(방산, 모빌리티)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="강원">
             <td class="num">26</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0105','1','2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(동일수준) 공고'); return false;">2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(동일수준) 공고</a>
-            </td>
+            <td class="title">2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(동일수준) 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-22 00:00 ~ 2026-06-30 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0105','1','2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(동일수준) 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="기타" data-region="전국/기타">
             <td class="num">27</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0104','1','2026 제조DX멘토 활용지원 구축지도 도입기업 모집'); return false;">2026 제조DX멘토 활용지원 구축지도 도입기업 모집</a>
-            </td>
+            <td class="title">2026 제조DX멘토 활용지원 구축지도 도입기업 모집</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-06-02 09:00 ~ 2026-11-30 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0104','1','2026 제조DX멘토 활용지원 구축지도 도입기업 모집')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="강원">
             <td class="num">28</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0103','1','2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(기초) 공고'); return false;">2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(기초) 공고</a>
-            </td>
+            <td class="title">2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(기초) 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-22 00:00 ~ 2026-06-30 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0103','1','2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(기초) 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="강원">
             <td class="num">29</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0102','1','2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(고도화) 공고'); return false;">2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(고도화) 공고</a>
-            </td>
+            <td class="title">2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(고도화) 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-22 00:00 ~ 2026-06-30 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0102','1','2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(고도화) 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="전남">
             <td class="num">30</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0101','1','2026년도 전남 지역특화형(식품, 바이오분야) 스마트공장 구축사업(고도화) 공고'); return false;">2026년도 전남 지역특화형(식품, 바이오분야) 스마트공장 구축사업(고도화) 공고</a>
-            </td>
+            <td class="title">2026년도 전남 지역특화형(식품, 바이오분야) 스마트공장 구축사업(고도화) 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-22 09:00 ~ 2026-06-30 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0101','1','2026년도 전남 지역특화형(식품, 바이오분야) 스마트공장 구축사업(고도화) 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="경북">
             <td class="num">31</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0098','1','2026년 경북 지역특화형 스마트공장 보급∙확산사업 재공고'); return false;">2026년 경북 지역특화형 스마트공장 보급∙확산사업 재공고</a>
-            </td>
+            <td class="title">2026년 경북 지역특화형 스마트공장 보급∙확산사업 재공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-13 09:00 ~ 2026-06-30 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0098','1','2026년 경북 지역특화형 스마트공장 보급∙확산사업 재공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="공고" data-year="2026" data-region="전국/기타">
             <td class="num">32</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0096','2','[공고] 2026년 소기업형 스마트공장 구축 지원사업 공고_2차'); return false;">[공고] 2026년 소기업형 스마트공장 구축 지원사업 공고_2차</a>
-            </td>
+            <td class="title">[공고] 2026년 소기업형 스마트공장 구축 지원사업 공고_2차</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-15 00:00 ~ 2026-06-26 17:50</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0096','2','[공고] 2026년 소기업형 스마트공장 구축 지원사업 공고_2차')">상세보기</button>
-            </td>
+            <td><span class="tag-org">공고</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="경북">
             <td class="num">33</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0090','3','2026년 경북형 스마트공장(기초단계) 구축지원 사업 2차모집_(동일수준)'); return false;">2026년 경북형 스마트공장(기초단계) 구축지원 사업 2차모집_(동일수준)</a>
-            </td>
+            <td class="title">2026년 경북형 스마트공장(기초단계) 구축지원 사업 2차모집_(동일수준)</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-26 14:40 ~ 2026-08-31 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0090','3','2026년 경북형 스마트공장(기초단계) 구축지원 사업 2차모집_(동일수준)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="경북">
             <td class="num">34</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0090','1','2026년 경북형 스마트공장(기초단계) 구축지원 사업 2차모집_(신규구축)'); return false;">2026년 경북형 스마트공장(기초단계) 구축지원 사업 2차모집_(신규구축)</a>
-            </td>
+            <td class="title">2026년 경북형 스마트공장(기초단계) 구축지원 사업 2차모집_(신규구축)</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-26 00:00 ~ 2026-12-31 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0090','1','2026년 경북형 스마트공장(기초단계) 구축지원 사업 2차모집_(신규구축)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="포항" data-year="2026" data-region="전국/기타">
             <td class="num">35</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0099','1','[포항] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집공고'); return false;">[포항] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집공고</a>
-            </td>
+            <td class="title">[포항] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-05-19 00:00 ~ 2026-08-31 00:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0099','1','[포항] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">포항</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="강원" data-year="2026" data-region="강원">
             <td class="num">36</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0087','1','[강원] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고'); return false;">[강원] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[강원] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-24 16:00 ~ 2026-12-31 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0087','1','[강원] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">강원</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="경기북부" data-year="2026" data-region="경기">
             <td class="num">37</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0085','1','[경기북부]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고'); return false;">[경기북부]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[경기북부]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-23 09:00 ~ 2026-12-31 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0085','1','[경기북부]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">경기북부</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="서울" data-year="2026" data-region="서울">
             <td class="num">38</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0082','1','[서울] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고'); return false;">[서울] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[서울] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-22 09:00 ~ 2026-12-31 00:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0082','1','[서울] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">서울</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="경남" data-year="2026" data-region="경남">
             <td class="num">39</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0075','1','[경남]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고'); return false;">[경남]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[경남]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-20 14:00 ~ 2026-12-31 15:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0075','1','[경남]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">경남</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="충북" data-year="2026" data-region="충북">
             <td class="num">40</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0076','2','[충북] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고'); return false;">[충북] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[충북] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-16 17:00 ~ 2026-12-31 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0076','2','[충북] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">충북</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="대구" data-year="2026" data-region="대구">
             <td class="num">41</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0074','1','[대구] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고'); return false;">[대구] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[대구] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-14 09:00 ~ 2026-12-31 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0074','1','[대구] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">대구</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="충남" data-year="2026" data-region="충남">
             <td class="num">42</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0073','1','[충남] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고'); return false;">[충남] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[충남] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-20 00:00 ~ 2026-12-31 00:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0073','1','[충남] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">충남</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="경북" data-year="2026" data-region="경북">
             <td class="num">43</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0071','1','[경북] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고'); return false;">[경북] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[경북] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-06 14:00 ~ 2026-12-31 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0071','1','[경북] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">경북</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="전남" data-year="2026" data-region="전남">
             <td class="num">44</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0072','1','[전남]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고'); return false;">[전남]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[전남]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-02 09:00 ~ 2026-12-31 15:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0072','1','[전남]2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">전남</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="전북" data-year="2026" data-region="전북">
             <td class="num">45</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0070','1','[전북] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고'); return false;">[전북] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[전북] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-02 09:00 ~ 2026-10-30 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0070','1','[전북] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">전북</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="경기" data-year="2026" data-region="경기">
             <td class="num">46</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0069','1','[경기] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고'); return false;">[경기] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[경기] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-02 09:00 ~ 2026-10-30 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0069','1','[경기] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">경기</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="부산" data-year="2026" data-region="부산">
             <td class="num">47</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0068','1','[부산] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고'); return false;">[부산] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">[부산] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-02 09:00 ~ 2026-10-30 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0068','1','[부산] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">부산</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="인천" data-year="2026" data-region="인천">
             <td class="num">48</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0067','3','[인천] 2026년 제조DX멘토단 활용지원사업 (구축지도) 도입기업 모집공고'); return false;">[인천] 2026년 제조DX멘토단 활용지원사업 (구축지도) 도입기업 모집공고</a>
-            </td>
+            <td class="title">[인천] 2026년 제조DX멘토단 활용지원사업 (구축지도) 도입기업 모집공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-04-01 13:00 ~ 2026-12-31 00:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0067','3','[인천] 2026년 제조DX멘토단 활용지원사업 (구축지도) 도입기업 모집공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">인천</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수예정" data-org="2차" data-year="기타" data-region="전국/기타">
             <td class="num">49</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0061','4','[2차]2026 대중소상생형(삼성) 스마트공장 구축(기초,동일수준)'); return false;">[2차]2026 대중소상생형(삼성) 스마트공장 구축(기초,동일수준)</a>
-            </td>
+            <td class="title">[2차]2026 대중소상생형(삼성) 스마트공장 구축(기초,동일수준)</td>
             <td><span class="badge soon">🔵 접수예정</span></td>
             <td class="period">2026-07-06 09:00 ~ 2026-07-16 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0061','4','[2차]2026 대중소상생형(삼성) 스마트공장 구축(기초,동일수준)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">2차</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수예정" data-org="2차" data-year="기타" data-region="전국/기타">
             <td class="num">50</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0061','3','[2차]2026 대중소상생형(삼성) 스마트공장 구축(고도화)'); return false;">[2차]2026 대중소상생형(삼성) 스마트공장 구축(고도화)</a>
-            </td>
+            <td class="title">[2차]2026 대중소상생형(삼성) 스마트공장 구축(고도화)</td>
             <td><span class="badge soon">🔵 접수예정</span></td>
             <td class="period">2026-07-06 09:00 ~ 2026-07-16 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0061','3','[2차]2026 대중소상생형(삼성) 스마트공장 구축(고도화)')">상세보기</button>
-            </td>
+            <td><span class="tag-org">2차</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="전국/기타">
             <td class="num">51</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0005','1','2026년 스마트공장 수준확인 사업 공고'); return false;">2026년 스마트공장 수준확인 사업 공고</a>
-            </td>
+            <td class="title">2026년 스마트공장 수준확인 사업 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-01-30 17:00 ~ 2026-12-31 17:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0005','1','2026년 스마트공장 수준확인 사업 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="전국/기타">
             <td class="num">52</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0010','1','2026년도 제조DX멘토단 활용지원(AX기획) 도입기업 모집 공고'); return false;">2026년도 제조DX멘토단 활용지원(AX기획) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">2026년도 제조DX멘토단 활용지원(AX기획) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-02-02 09:00 ~ 2026-10-31 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0010','1','2026년도 제조DX멘토단 활용지원(AX기획) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="전국/기타">
             <td class="num">53</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2026-N-0011','1','2026년도 제조DX멘토단 활용지원(사전기획) 도입기업 모집 공고'); return false;">2026년도 제조DX멘토단 활용지원(사전기획) 도입기업 모집 공고</a>
-            </td>
+            <td class="title">2026년도 제조DX멘토단 활용지원(사전기획) 도입기업 모집 공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2026-02-02 09:00 ~ 2026-10-31 18:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2026-N-0011','1','2026년도 제조DX멘토단 활용지원(사전기획) 도입기업 모집 공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-
-        <tr>
+<tr data-status="접수중" data-org="기타" data-year="2026" data-region="전국/기타">
             <td class="num">54</td>
-            <td class="title">
-                <a href="#" onclick="openModal('2025-N-0211','1','2026년 제조DX멘토단 활용지원사업 통합공고'); return false;">2026년 제조DX멘토단 활용지원사업 통합공고</a>
-            </td>
+            <td class="title">2026년 제조DX멘토단 활용지원사업 통합공고</td>
             <td><span class="badge open">🟢 접수중</span></td>
             <td class="period">2025-12-30 09:00 ~ 2026-12-31 20:00</td>
-            <td>
-                <button class="btn-detail" onclick="openModal('2025-N-0211','1','2026년 제조DX멘토단 활용지원사업 통합공고')">상세보기</button>
-            </td>
+            <td><span class="tag-org">기타</span></td>
         </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="source-link">
-  데이터 출처: <a href="https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc" target="_blank">smart-factory.kr 사업공고</a>
-</div>
-
-<!-- 모달 -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-  <div class="modal">
-    <div class="modal-header">
-      <h2 id="modalTitle">공고 상세</h2>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <div class="modal-body" id="modalBody">
-      <div class="loading">불러오는 중...</div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-cancel" onclick="closeModal()">닫기</button>
-      <a class="btn-site" href="https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc" target="_blank" id="modalSiteLink">공고 목록 보기 →</a>
-    </div>
+      </tbody>
+    </table>
   </div>
 </div>
 
+<div class="footer">
+  데이터 출처: <a href="https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc" target="_blank">스마트공장 사업관리시스템</a> · 매일 오전 10시 자동 갱신
+</div>
+
 <script>
-const API_DTL = 'https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc/selectBsnsPbancDtlPage.do';
-
-async function openModal(pbancId, pbancSn, title) {
-  document.getElementById('modalTitle').textContent = title;
-  document.getElementById('modalBody').innerHTML = '<div class="loading">⏳ 공고 내용을 불러오는 중...</div>';
-  document.getElementById('modalOverlay').classList.add('active');
-  document.body.style.overflow = 'hidden';
-
-  try {
-    const res = await fetch(API_DTL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Referer': 'https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl'
-      },
-      body: JSON.stringify({ key: 'info', pbancId: pbancId, pbancSn: parseInt(pbancSn) })
-    });
-    const data = await res.json();
-    const info = data?.modelAndView?.model?.pbancInfo || data?.pbancInfo || data;
-    renderModal(info);
-  } catch(e) {
-    document.getElementById('modalBody').innerHTML = `
-      <div class="loading">
-        ⚠️ 상세 정보를 불러올 수 없습니다.<br>
-        <a href="https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc" target="_blank" style="color:#1a4fa0">공고 목록에서 직접 확인하기 →</a>
-      </div>`;
-  }
-}
-
-function renderModal(info) {
-  if (!info || Object.keys(info).length === 0) {
-    document.getElementById('modalBody').innerHTML = '<div class="loading">상세 정보가 없습니다.</div>';
-    return;
-  }
-
-  const get = (...keys) => { for(const k of keys) if(info[k]) return info[k]; return '-'; };
-  const fmtDate = d => d && d.length===8 ? d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6) : (d||'-');
-
-  document.getElementById('modalBody').innerHTML = `
-    <div class="detail-grid">
-      <div class="detail-item"><div class="label">접수 시작일</div><div class="value">${fmtDate(get('rcptYmdDa2001','rcptBgngDt'))}</div></div>
-      <div class="detail-item"><div class="label">접수 마감일</div><div class="value">${fmtDate(get('rcptYmdDa2002','rcptEndDt'))}</div></div>
-      <div class="detail-item"><div class="label">사업 연도</div><div class="value">${get('bizYr')}</div></div>
-      <div class="detail-item"><div class="label">공고 번호</div><div class="value">${get('pbancNo','pbancId')}</div></div>
-    </div>
-    <div class="detail-desc">${get('pbancCn','dtlPbancNm','cn','content').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
-  `;
-}
-
-function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-function closeModalOutside(e) {
-  if (e.target === document.getElementById('modalOverlay')) closeModal();
-}
-
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
-
-function filterTable() {
-  const search = document.getElementById('searchInput').value.toLowerCase();
-  const status = document.getElementById('statusFilter').value;
+function applyFilter() {
+  const search  = document.getElementById('searchInput').value.toLowerCase();
+  const status  = document.getElementById('statusFilter').value;
+  const year    = document.getElementById('yearFilter').value;
+  const org     = document.getElementById('orgFilter').value;
+  const region  = document.getElementById('regionFilter').value;
+  let count = 0;
   document.querySelectorAll('#tableBody tr').forEach(row => {
-    const title  = row.querySelector('.title')?.textContent.toLowerCase() || '';
-    const badge  = row.querySelector('.badge')?.textContent || '';
-    row.style.display = (!search || title.includes(search)) && (!status || badge.includes(status)) ? '' : 'none';
+    const title   = row.querySelector('.title')?.textContent.toLowerCase() || '';
+    const badge   = row.querySelector('.badge')?.textContent || '';
+    const rowOrg  = row.dataset.org || '';
+    const rowYear = row.dataset.year || '';
+    const rowReg  = row.dataset.region || '';
+    const ok = (!search || title.includes(search))
+            && (!status || badge.includes(status))
+            && (!year   || rowYear === year)
+            && (!org    || rowOrg  === org)
+            && (!region || rowReg  === region);
+    row.style.display = ok ? '' : 'none';
+    if(ok) count++;
   });
+  document.getElementById('resultCount').textContent = count + '건';
+}
+
+function resetFilter() {
+  ['searchInput'].forEach(id => document.getElementById(id).value = '');
+  ['statusFilter','yearFilter','orgFilter','regionFilter'].forEach(id => document.getElementById(id).selectedIndex = 0);
+  applyFilter();
 }
 </script>
-
 </body>
 </html>
