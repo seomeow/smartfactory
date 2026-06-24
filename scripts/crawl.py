@@ -22,8 +22,14 @@ def fetch_page(status_code="", page=1):
         "dtlPbancNm": "",
         "rcptStts": status_code,
         "ordrSe": "REG",
-        "pageBasic": str(page),
-        "blockPage": str(PAGE_SIZE),
+        "pageBasic": "1",
+        "blockPage": "10",
+        "currentPage": page,
+        "startNumber": (page - 1) * 10,
+        "endNumber": page * 10 - 1,
+        "showPage": "10",
+        "totalCount": "0",
+        "totalPageCount": "0",
     }
     res = requests.post(API_URL, json=payload, headers=HEADERS, timeout=15)
     res.raise_for_status()
