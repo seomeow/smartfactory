@@ -174,7 +174,7 @@ def build_html(data):
     <h1>🏭 스마트공장 사업공고 대시보드</h1>
     <p>smart-factory.kr 공식 공고를 매일 자동 수집 · 최종 업데이트: {updated}</p>
   </div>
-  <a class="btn-official" href="https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPblanc" target="_blank">📋 공식 공고 목록 →</a>
+  <a class="btn-official" href="https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbanc" target="_blank">📋 공식 공고 목록 →</a>
 </header>
 
 <!-- KPI -->
