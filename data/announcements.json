@@ -1,10 +1,19 @@
 {
-  "updated_at": "2026-06-28 14:11 KST",
-  "count": 56,
-  "open_count": 53,
-  "soon_count": 3,
+  "updated_at": "2026-06-29 14:22 KST",
+  "count": 59,
+  "open_count": 54,
+  "soon_count": 5,
   "closed_count": 0,
   "items": [
+    {
+      "title": "[현대위아(주)] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
+      "status": "접수중",
+      "start": "2026-06-29 00:00 ~ 2026-06-30 17:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0129",
+      "pbancId": "2026-N-0129",
+      "pbancSn": "1"
+    },
     {
       "title": "[HD현대중공업] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
       "status": "접수중",
@@ -24,31 +33,22 @@
       "pbancSn": "1"
     },
     {
-      "title": "[현대자동차 그룹] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
-      "status": "접수중",
-      "start": "2026-06-22 00:00 ~ 2026-07-01 00:00",
+      "title": "2026년 경북형(포항) 스마트공장(기초단계) 구축지원사업 추가모집 공고(동일수준)",
+      "status": "접수예정",
+      "start": "2026-06-30 00:00 ~ 2026-07-25 00:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0124",
-      "pbancId": "2026-N-0124",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0130",
+      "pbancId": "2026-N-0130",
       "pbancSn": "1"
     },
     {
-      "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)",
-      "status": "접수중",
-      "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
+      "title": "2026년 경북형(포항) 스마트공장(기초단계) 구축지원사업 추가모집 공고(신규구축)",
+      "status": "접수예정",
+      "start": "2026-06-30 00:00 ~ 2026-07-25 00:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
-      "pbancId": "2026-N-0110",
-      "pbancSn": "2"
-    },
-    {
-      "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)",
-      "status": "접수중",
-      "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
-      "pbancId": "2026-N-0110",
-      "pbancSn": "4"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0128",
+      "pbancId": "2026-N-0128",
+      "pbancSn": "1"
     },
     {
       "title": "[대구] AI솔루션 실증 지원(단일 실증)",
@@ -69,6 +69,33 @@
       "pbancSn": "5"
     },
     {
+      "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)",
+      "status": "접수중",
+      "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
+      "pbancId": "2026-N-0110",
+      "pbancSn": "4"
+    },
+    {
+      "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)",
+      "status": "접수중",
+      "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
+      "pbancId": "2026-N-0110",
+      "pbancSn": "2"
+    },
+    {
+      "title": "[현대자동차 그룹] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
+      "status": "접수중",
+      "start": "2026-06-22 00:00 ~ 2026-07-01 00:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0124",
+      "pbancId": "2026-N-0124",
+      "pbancSn": "1"
+    },
+    {
       "title": "[KG ICT] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
       "status": "접수중",
       "start": "2026-06-18 00:00 ~ 2026-06-30 23:50",
@@ -87,12 +114,21 @@
       "pbancSn": "3"
     },
     {
-      "title": "[LG CNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
+      "title": "[삼성전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
       "status": "접수중",
       "start": "2026-06-17 17:00 ~ 2026-07-01 00:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0116",
-      "pbancId": "2026-N-0116",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0062",
+      "pbancId": "2026-N-0062",
+      "pbancSn": "2"
+    },
+    {
+      "title": "2026년「푸드테크 스마트 제조 기반 구축」사업 공고(기초)_4차 재공고",
+      "status": "접수중",
+      "start": "2026-06-17 09:00 ~ 2026-07-17 17:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0121",
+      "pbancId": "2026-N-0121",
       "pbancSn": "1"
     },
     {
@@ -105,22 +141,13 @@
       "pbancSn": "1"
     },
     {
-      "title": "2026년「푸드테크 스마트 제조 기반 구축」사업 공고(기초)_4차 재공고",
-      "status": "접수중",
-      "start": "2026-06-17 09:00 ~ 2026-07-17 17:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0121",
-      "pbancId": "2026-N-0121",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[삼성전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
+      "title": "[LG CNS] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
       "status": "접수중",
       "start": "2026-06-17 17:00 ~ 2026-07-01 00:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0062",
-      "pbancId": "2026-N-0062",
-      "pbancSn": "2"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0116",
+      "pbancId": "2026-N-0116",
+      "pbancSn": "1"
     },
     {
       "title": "2026년 전북형 스마트 제조혁신 프로젝트 추가모집 (JS1-일반과제)",
@@ -129,15 +156,6 @@
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0112",
       "pbancId": "2026-N-0112",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[LS일렉트릭] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
-      "status": "접수중",
-      "start": "2026-06-15 09:00 ~ 2026-07-01 00:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0115",
-      "pbancId": "2026-N-0115",
       "pbancSn": "1"
     },
     {
@@ -159,6 +177,15 @@
       "pbancSn": "1"
     },
     {
+      "title": "[LG전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
+      "status": "접수중",
+      "start": "2026-06-15 00:00 ~ 2026-07-01 00:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0118",
+      "pbancId": "2026-N-0118",
+      "pbancSn": "1"
+    },
+    {
       "title": "[미라콤] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
       "status": "접수중",
       "start": "2026-06-15 09:00 ~ 2026-07-01 00:00",
@@ -168,12 +195,12 @@
       "pbancSn": "1"
     },
     {
-      "title": "[LG전자] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
+      "title": "[LS일렉트릭] 2026년도 상생형 인공지능 전환(AX) 선도모델 구축지원 사업 공고",
       "status": "접수중",
-      "start": "2026-06-15 00:00 ~ 2026-07-01 00:00",
+      "start": "2026-06-15 09:00 ~ 2026-07-01 00:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0118",
-      "pbancId": "2026-N-0118",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0115",
+      "pbancId": "2026-N-0115",
       "pbancSn": "1"
     },
     {
@@ -240,12 +267,12 @@
       "pbancSn": "1"
     },
     {
-      "title": "2026년도 전남 지역특화형(식품, 바이오분야) 스마트공장 구축사업(고도화) 공고",
+      "title": "2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(고도화) 공고",
       "status": "접수중",
-      "start": "2026-05-22 09:00 ~ 2026-06-30 17:00",
+      "start": "2026-05-22 00:00 ~ 2026-06-30 17:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0101",
-      "pbancId": "2026-N-0101",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0102",
+      "pbancId": "2026-N-0102",
       "pbancSn": "1"
     },
     {
@@ -258,15 +285,6 @@
       "pbancSn": "1"
     },
     {
-      "title": "2026 제조DX멘토 활용지원 구축지도 도입기업 모집",
-      "status": "접수중",
-      "start": "2026-06-02 09:00 ~ 2026-11-30 17:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0104",
-      "pbancId": "2026-N-0104",
-      "pbancSn": "1"
-    },
-    {
       "title": "2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(기초) 공고",
       "status": "접수중",
       "start": "2026-05-22 00:00 ~ 2026-06-30 17:00",
@@ -276,12 +294,21 @@
       "pbancSn": "1"
     },
     {
-      "title": "2026년도 강원 지역특화형(바이오헬스·식품) 스마트공장 구축사업(고도화) 공고",
+      "title": "2026 제조DX멘토 활용지원 구축지도 도입기업 모집",
       "status": "접수중",
-      "start": "2026-05-22 00:00 ~ 2026-06-30 17:00",
+      "start": "2026-06-02 09:00 ~ 2026-11-30 17:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0102",
-      "pbancId": "2026-N-0102",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0104",
+      "pbancId": "2026-N-0104",
+      "pbancSn": "1"
+    },
+    {
+      "title": "2026년도 전남 지역특화형(식품, 바이오분야) 스마트공장 구축사업(고도화) 공고",
+      "status": "접수중",
+      "start": "2026-05-22 09:00 ~ 2026-06-30 17:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0101",
+      "pbancId": "2026-N-0101",
       "pbancSn": "1"
     },
     {
@@ -468,18 +495,18 @@
       "title": "2025년「푸드테크 스마트 제조 기반 구축」사업  공고_기초 (상주시)",
       "status": "접수중",
       "start": "2026-02-23 17:00 ~ 2026-03-31 17:00",
-      "end": "2026-02-23 17:00 ~ 2026-06-29 17:00",
+      "end": "2026-02-23 17:00 ~ 2026-07-06 17:00",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0052",
       "pbancId": "2026-N-0052",
       "pbancSn": "1"
     },
     {
-      "title": "2026년 스마트공장 수준확인 사업 공고",
+      "title": "2026년도 제조DX멘토단 활용지원(사전기획) 도입기업 모집 공고",
       "status": "접수중",
-      "start": "2026-01-30 17:00 ~ 2026-12-31 17:00",
+      "start": "2026-02-02 09:00 ~ 2026-10-31 18:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0005",
-      "pbancId": "2026-N-0005",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0011",
+      "pbancId": "2026-N-0011",
       "pbancSn": "1"
     },
     {
@@ -492,12 +519,12 @@
       "pbancSn": "1"
     },
     {
-      "title": "2026년도 제조DX멘토단 활용지원(사전기획) 도입기업 모집 공고",
+      "title": "2026년 스마트공장 수준확인 사업 공고",
       "status": "접수중",
-      "start": "2026-02-02 09:00 ~ 2026-10-31 18:00",
+      "start": "2026-01-30 17:00 ~ 2026-12-31 17:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0011",
-      "pbancId": "2026-N-0011",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0005",
+      "pbancId": "2026-N-0005",
       "pbancSn": "1"
     },
     {
