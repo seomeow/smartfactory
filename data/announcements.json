@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-24 13:01 KST",
-  "count": 51,
-  "open_count": 51,
+  "updated_at": "2026-07-25 12:57 KST",
+  "count": 43,
+  "open_count": 43,
   "soon_count": 0,
   "closed_count": 0,
   "items": [
@@ -33,24 +33,6 @@
       "pbancSn": "1"
     },
     {
-      "title": "[한국남부발전] 대중소 상생형 스마트공장 구축지원사업_고도화",
-      "status": "접수중",
-      "start": "2026-07-21 13:00 ~ 2026-07-24 23:40",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0151",
-      "pbancId": "2026-N-0151",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[한국남부발전] 대중소 상생형 스마트공장 구축지원사업_기초",
-      "status": "접수중",
-      "start": "2026-07-21 13:00 ~ 2026-07-24 23:40",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0150",
-      "pbancId": "2026-N-0150",
-      "pbancSn": "1"
-    },
-    {
       "title": "[한국수력원자력] 2026 대중소 상생형 스마트공장 구축 사업_고도화(동일)",
       "status": "접수중",
       "start": "2026-07-21 00:00 ~ 2026-08-07 23:50",
@@ -78,13 +60,13 @@
       "pbancSn": "3"
     },
     {
-      "title": "[한국남동발전] 2026 대중소 상생형 스마트공장 구축 사업_기초",
+      "title": "[풀무원] 대중소 상생형 스마트공장 구축지원사업_AI트랙",
       "status": "접수중",
-      "start": "2026-07-20 00:00 ~ 2026-08-07 23:50",
+      "start": "2026-07-20 00:00 ~ 2026-07-31 23:50",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0145",
-      "pbancId": "2026-N-0145",
-      "pbancSn": "2"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0148",
+      "pbancId": "2026-N-0148",
+      "pbancSn": "1"
     },
     {
       "title": "[한국남동발전] 2026 대중소 상생형 스마트공장 구축 사업_고도화",
@@ -96,13 +78,13 @@
       "pbancSn": "1"
     },
     {
-      "title": "[풀무원] 대중소 상생형 스마트공장 구축지원사업_AI트랙",
+      "title": "[한국남동발전] 2026 대중소 상생형 스마트공장 구축 사업_기초",
       "status": "접수중",
-      "start": "2026-07-20 00:00 ~ 2026-07-31 23:50",
+      "start": "2026-07-20 00:00 ~ 2026-08-07 23:50",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0148",
-      "pbancId": "2026-N-0148",
-      "pbancSn": "1"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0145",
+      "pbancId": "2026-N-0145",
+      "pbancSn": "2"
     },
     {
       "title": "[광주] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고",
@@ -114,13 +96,13 @@
       "pbancSn": "1"
     },
     {
-      "title": "[LIG디펜스앤에어로스페이스] 2026 대중소 상생형 스마트공장 구축 사업_고도화C",
+      "title": "[LIG디펜스앤에어로스페이스] 2026 대중소 상생형 스마트공장 구축 사업_고도화A",
       "status": "접수중",
       "start": "2026-07-15 00:00 ~ 2026-08-31 23:50",
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0146",
       "pbancId": "2026-N-0146",
-      "pbancSn": "3"
+      "pbancSn": "1"
     },
     {
       "title": "[LIG디펜스앤에어로스페이스] 2026 대중소 상생형 스마트공장 구축 사업_고도화B",
@@ -132,13 +114,13 @@
       "pbancSn": "2"
     },
     {
-      "title": "[LIG디펜스앤에어로스페이스] 2026 대중소 상생형 스마트공장 구축 사업_고도화A",
+      "title": "[LIG디펜스앤에어로스페이스] 2026 대중소 상생형 스마트공장 구축 사업_고도화C",
       "status": "접수중",
       "start": "2026-07-15 00:00 ~ 2026-08-31 23:50",
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0146",
       "pbancId": "2026-N-0146",
-      "pbancSn": "1"
+      "pbancSn": "3"
     },
     {
       "title": "[LIG디펜스앤에어로스페이스] 2026 대중소 상생형 스마트공장 구축 사업_고도화D",
@@ -148,33 +130,6 @@
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0146",
       "pbancId": "2026-N-0146",
       "pbancSn": "4"
-    },
-    {
-      "title": "[LS일렉트릭] 대중소 상생형 스마트공장 구축지원사업_클라우드B",
-      "status": "접수중",
-      "start": "2026-07-15 00:00 ~ 2026-07-16 12:00",
-      "end": "2026-07-22 09:00 ~ 2026-07-24 23:40",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0144",
-      "pbancId": "2026-N-0144",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[한국광해광업공단] 대중소 상생형 스마트공장 구축지원사업_고도화",
-      "status": "접수중",
-      "start": "2026-07-20 00:00 ~ 2026-07-24 23:40",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0140",
-      "pbancId": "2026-N-0140",
-      "pbancSn": "2"
-    },
-    {
-      "title": "2026년 대구지역 스마트공장 구축(기초단계)지원 사업 추가모집",
-      "status": "접수중",
-      "start": "2026-07-14 09:00 ~ 2026-07-24 17:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0139",
-      "pbancId": "2026-N-0139",
-      "pbancSn": "1"
     },
     {
       "title": "[한국중부발전] 2026 대중소 상생형 스마트공장 구축 사업_기초",
@@ -195,15 +150,6 @@
       "pbancSn": "1"
     },
     {
-      "title": "[LG이노텍] 2026 대중소 상생형 스마트공장 구축 사업_고도화",
-      "status": "접수중",
-      "start": "2026-07-06 00:00 ~ 2026-08-31 23:50",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0138",
-      "pbancId": "2026-N-0138",
-      "pbancSn": "1"
-    },
-    {
       "title": "[LG이노텍] 2026 대중소 상생형 스마트공장 구축 사업_기초",
       "status": "접수중",
       "start": "2026-07-06 00:00 ~ 2026-08-31 23:50",
@@ -213,58 +159,40 @@
       "pbancSn": "2"
     },
     {
-      "title": "26년 전북 지역특화형 스마트공장 구축지원사업 사업공고(기초)(수시)",
+      "title": "[LG이노텍] 2026 대중소 상생형 스마트공장 구축 사업_고도화",
       "status": "접수중",
-      "start": "2026-07-09 00:00 ~ 2026-07-24 18:00",
+      "start": "2026-07-06 00:00 ~ 2026-08-31 23:50",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0137",
-      "pbancId": "2026-N-0137",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0138",
+      "pbancId": "2026-N-0138",
       "pbancSn": "1"
-    },
-    {
-      "title": "2026년 경북형(포항) 스마트공장(기초단계) 구축지원사업 추가모집 공고(신규구축)",
-      "status": "접수중",
-      "start": "2026-06-30 00:00 ~ 2026-07-25 00:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0128",
-      "pbancId": "2026-N-0128",
-      "pbancSn": "1"
-    },
-    {
-      "title": "2026년 경북형(포항) 스마트공장(기초단계) 구축지원사업 추가모집 공고(동일수준)",
-      "status": "접수중",
-      "start": "2026-06-30 00:00 ~ 2026-07-25 00:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0130",
-      "pbancId": "2026-N-0130",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)",
-      "status": "접수중",
-      "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
-      "end": "2026-07-21 00:00 ~ 2026-07-31 23:50",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
-      "pbancId": "2026-N-0110",
-      "pbancSn": "2"
-    },
-    {
-      "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)",
-      "status": "접수중",
-      "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
-      "end": "2026-07-21 00:00 ~ 2026-07-31 23:50",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
-      "pbancId": "2026-N-0110",
-      "pbancSn": "4"
     },
     {
       "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(기초)",
       "status": "접수중",
       "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
-      "end": "2026-07-21 00:00 ~ 2026-07-31 23:50",
+      "end": "2026-07-21 00:00 ~ 2026-08-10 23:50",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
       "pbancId": "2026-N-0110",
       "pbancSn": "5"
+    },
+    {
+      "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화1)",
+      "status": "접수중",
+      "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
+      "end": "2026-07-21 00:00 ~ 2026-08-10 23:50",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
+      "pbancId": "2026-N-0110",
+      "pbancSn": "4"
+    },
+    {
+      "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)",
+      "status": "접수중",
+      "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
+      "end": "2026-07-21 00:00 ~ 2026-08-10 23:50",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
+      "pbancId": "2026-N-0110",
+      "pbancSn": "2"
     },
     {
       "title": "[제주] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고",
