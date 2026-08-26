@@ -1,10 +1,28 @@
 {
-  "updated_at": "2026-08-25 11:12 KST",
-  "count": 52,
-  "open_count": 52,
+  "updated_at": "2026-08-26 11:18 KST",
+  "count": 54,
+  "open_count": 54,
   "soon_count": 0,
   "closed_count": 0,
   "items": [
+    {
+      "title": "[한국전력기술] 대중소 상생형 스마트공장 구축지원사업",
+      "status": "접수중",
+      "start": "2026-08-26 09:20 ~ 2026-08-27 23:40",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0178",
+      "pbancId": "2026-N-0178",
+      "pbancSn": "1"
+    },
+    {
+      "title": "[5개 공공기관 컨소시엄] 대중소 상생형 스마트공장 구축지원사업",
+      "status": "접수중",
+      "start": "2026-08-26 09:20 ~ 2026-08-27 23:40",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0177",
+      "pbancId": "2026-N-0177",
+      "pbancSn": "1"
+    },
     {
       "title": "2026년 디지털협업공장 구축 지원사업(2차, 기획기관 : 메인비즈협회)",
       "status": "접수중",
@@ -13,15 +31,6 @@
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0175",
       "pbancId": "2026-N-0175",
       "pbancSn": "2"
-    },
-    {
-      "title": "2026년 디지털협업공장 구축 지원사업 (2차,  기획기관 : 이노비즈협회)",
-      "status": "접수중",
-      "start": "2026-08-20 14:00 ~ 2026-08-26 00:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0175",
-      "pbancId": "2026-N-0175",
-      "pbancSn": "1"
     },
     {
       "title": "[한화시스템] 2026 대중소 상생형 스마트공장 구축 사업_고도화",
@@ -274,6 +283,15 @@
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
       "pbancId": "2026-N-0110",
       "pbancSn": "4"
+    },
+    {
+      "title": "[현대자동차그룹]2026 대중소상생형 스마트공장 구축(고도화 동일)",
+      "status": "접수중",
+      "start": "2026-06-22 00:00 ~ 2026-07-21 23:50",
+      "end": "2026-07-21 00:00 ~ 2026-08-31 23:50",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0110",
+      "pbancId": "2026-N-0110",
+      "pbancSn": "2"
     },
     {
       "title": "2026 제조DX멘토 활용지원 구축지도 도입기업 모집",
