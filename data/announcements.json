@@ -1,17 +1,26 @@
 {
-  "updated_at": "2026-09-02 14:15 KST",
-  "count": 55,
-  "open_count": 55,
+  "updated_at": "2026-09-03 14:20 KST",
+  "count": 56,
+  "open_count": 56,
   "soon_count": 0,
   "closed_count": 0,
   "items": [
     {
-      "title": "[LG전자] 2026년도 대중소 상생형(AI트랙) 스마트공장 구축지원 (유형2)",
+      "title": "2026년 경남 산업안전AI 스마트공장 구축 지원사업 추가공고",
       "status": "접수중",
-      "start": "2026-09-02 09:00 ~ 2026-09-18 17:00",
+      "start": "2026-09-03 13:00 ~ 2026-09-30 17:00",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0189",
-      "pbancId": "2026-N-0189",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0191",
+      "pbancId": "2026-N-0191",
+      "pbancSn": "1"
+    },
+    {
+      "title": "2026년 경남 스마트공장 기초구축지원사업 추가모집",
+      "status": "접수중",
+      "start": "2026-09-03 10:00 ~ 2026-09-30 17:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0078",
+      "pbancId": "2026-N-0078",
       "pbancSn": "2"
     },
     {
@@ -22,6 +31,15 @@
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0189",
       "pbancId": "2026-N-0189",
       "pbancSn": "1"
+    },
+    {
+      "title": "[LG전자] 2026년도 대중소 상생형(AI트랙) 스마트공장 구축지원 (유형2)",
+      "status": "접수중",
+      "start": "2026-09-02 09:00 ~ 2026-09-18 17:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0189",
+      "pbancId": "2026-N-0189",
+      "pbancSn": "2"
     },
     {
       "title": "[세종]2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고",
@@ -156,15 +174,6 @@
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0174",
       "pbancId": "2026-N-0174",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[한국가스안전공사] 대중소 상생형 스마트공장 구축지원사업",
-      "status": "접수중",
-      "start": "2026-08-12 15:30 ~ 2026-09-02 23:40",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0172",
-      "pbancId": "2026-N-0172",
       "pbancSn": "1"
     },
     {
