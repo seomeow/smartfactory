@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-10-19 14:28 KST",
-  "count": 48,
-  "open_count": 48,
+  "updated_at": "2026-10-20 14:32 KST",
+  "count": 49,
+  "open_count": 49,
   "soon_count": 0,
   "closed_count": 0,
   "items": [
     {
-      "title": "[삼성디스플레이] 2026 대중소 상생형 스마트공장 구축 사업_AI트랙(고도화)",
+      "title": "[삼성디스플레이] 2026 대중소 상생형 스마트공장 구축 사업_AI트랙",
       "status": "접수중",
-      "start": "2026-10-14 00:00 ~ 2026-10-31 23:50",
+      "start": "2026-10-19 00:00 ~ 2026-10-31 23:50",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0214",
-      "pbancId": "2026-N-0214",
-      "pbancSn": "4"
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0215",
+      "pbancId": "2026-N-0215",
+      "pbancSn": "1"
     },
     {
       "title": "[삼성디스플레이] 2026 대중소 상생형 스마트공장 구축 사업_고도화B-2",
@@ -78,40 +78,13 @@
       "pbancSn": "2"
     },
     {
-      "title": "2026년 대중소 상생형(고도화) 포스코 도입기업 모집공고(대한상공회의소)",
-      "status": "접수중",
-      "start": "2026-10-02 09:00 ~ 2026-10-21 17:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0202",
-      "pbancId": "2026-N-0202",
-      "pbancSn": "2"
-    },
-    {
-      "title": "2026년 전남형 스마트공장(기초단계) 보급·확산사업(2차) 지원공고",
-      "status": "접수중",
-      "start": "2026-10-01 14:00 ~ 2026-10-30 17:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0208",
-      "pbancId": "2026-N-0208",
-      "pbancSn": "2"
-    },
-    {
-      "title": "2026년 전남 지역특화형 스마트공장(식품,바이오) 구축사업 (기초) 공고(2차)",
-      "status": "접수중",
-      "start": "2026-10-01 13:00 ~ 2026-10-30 17:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0209",
-      "pbancId": "2026-N-0209",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[한국도로공사] 2026 대중소 상생형 스마트공장 구축 사업_기초",
+      "title": "[한국도로공사] 2026 대중소 상생형 스마트공장 구축 사업_고도화B",
       "status": "접수중",
       "start": "2026-10-01 00:00 ~ 2026-10-30 23:50",
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0210",
       "pbancId": "2026-N-0210",
-      "pbancSn": "1"
+      "pbancSn": "3"
     },
     {
       "title": "[한국도로공사] 2026 대중소 상생형 스마트공장 구축 사업_고도화A",
@@ -123,13 +96,40 @@
       "pbancSn": "2"
     },
     {
-      "title": "[한국도로공사] 2026 대중소 상생형 스마트공장 구축 사업_고도화B",
+      "title": "[한국도로공사] 2026 대중소 상생형 스마트공장 구축 사업_기초",
       "status": "접수중",
       "start": "2026-10-01 00:00 ~ 2026-10-30 23:50",
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0210",
       "pbancId": "2026-N-0210",
-      "pbancSn": "3"
+      "pbancSn": "1"
+    },
+    {
+      "title": "2026년 전남 지역특화형 스마트공장(식품,바이오) 구축사업 (기초) 공고(2차)",
+      "status": "접수중",
+      "start": "2026-10-01 13:00 ~ 2026-10-30 17:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0209",
+      "pbancId": "2026-N-0209",
+      "pbancSn": "1"
+    },
+    {
+      "title": "2026년 전남형 스마트공장(기초단계) 보급·확산사업(2차) 지원공고",
+      "status": "접수중",
+      "start": "2026-10-01 14:00 ~ 2026-10-30 17:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0208",
+      "pbancId": "2026-N-0208",
+      "pbancSn": "2"
+    },
+    {
+      "title": "2026년 대중소 상생형(고도화) 포스코 도입기업 모집공고(대한상공회의소)",
+      "status": "접수중",
+      "start": "2026-10-02 09:00 ~ 2026-10-21 17:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0202",
+      "pbancId": "2026-N-0202",
+      "pbancSn": "2"
     },
     {
       "title": "2026년 경북형(포항) 스마트공장(기초단계) 구축지원사업 3차모집 공고(동일수준)",
@@ -150,15 +150,6 @@
       "pbancSn": "1"
     },
     {
-      "title": "[한국서부발전] 2026 대중소 상생형 스마트공장 구축 사업_x",
-      "status": "접수중",
-      "start": "2026-09-28 00:00 ~ 2026-10-31 23:50",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0201",
-      "pbancId": "2026-N-0201",
-      "pbancSn": "1"
-    },
-    {
       "title": "[한국서부발전] 2026 대중소 상생형 스마트공장 구축 사업_고도화(동일)",
       "status": "접수중",
       "start": "2026-09-28 00:00 ~ 2026-10-31 23:50",
@@ -168,12 +159,30 @@
       "pbancSn": "3"
     },
     {
+      "title": "[한국서부발전] 2026 대중소 상생형 스마트공장 구축 사업_고도화",
+      "status": "접수중",
+      "start": "2026-09-28 00:00 ~ 2026-10-31 23:50",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0201",
+      "pbancId": "2026-N-0201",
+      "pbancSn": "2"
+    },
+    {
       "title": "[한국토지주택공사] 대중소 상생형 스마트공장 구축지원사업",
       "status": "접수중",
       "start": "2026-09-17 00:00 ~ 2026-10-20 23:40",
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0206",
       "pbancId": "2026-N-0206",
+      "pbancSn": "1"
+    },
+    {
+      "title": "[LS일렉트릭] 대중소 상생형 스마트공장 구축지원사업_고도화C(추가)",
+      "status": "접수중",
+      "start": "2026-09-14 00:00 ~ 2026-10-26 23:40",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0194",
+      "pbancId": "2026-N-0194",
       "pbancSn": "1"
     },
     {
