@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-22 14:35 KST",
-  "count": 48,
-  "open_count": 48,
+  "updated_at": "2026-10-23 14:33 KST",
+  "count": 51,
+  "open_count": 51,
   "soon_count": 0,
   "closed_count": 0,
   "items": [
@@ -87,6 +87,15 @@
       "pbancSn": "2"
     },
     {
+      "title": "[농협경제지주] 대중소 상생형 스마트공장 구축지원사업_AI트랙",
+      "status": "접수중",
+      "start": "2026-10-01 00:00 ~ 2026-11-06 23:40",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0219",
+      "pbancId": "2026-N-0219",
+      "pbancSn": "1"
+    },
+    {
       "title": "2026년 전남형 스마트공장(기초단계) 보급·확산사업(2차) 지원공고",
       "status": "접수중",
       "start": "2026-10-01 14:00 ~ 2026-10-30 17:00",
@@ -130,6 +139,24 @@
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0210",
       "pbancId": "2026-N-0210",
       "pbancSn": "3"
+    },
+    {
+      "title": "[농협경제지주] 대중소 상생형 스마트공장 구축지원사업_기초",
+      "status": "접수중",
+      "start": "2026-10-01 00:00 ~ 2026-11-06 23:40",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0217",
+      "pbancId": "2026-N-0217",
+      "pbancSn": "1"
+    },
+    {
+      "title": "[농협경제지주] 대중소 상생형 스마트공장 구축지원사업_고도화",
+      "status": "접수중",
+      "start": "2026-10-01 00:00 ~ 2026-11-06 23:40",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0218",
+      "pbancId": "2026-N-0218",
+      "pbancSn": "1"
     },
     {
       "title": "2026년 경북형(포항) 스마트공장(기초단계) 구축지원사업 3차모집 공고(동일수준)",
