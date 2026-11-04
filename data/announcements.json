@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-03 16:22 KST",
-  "count": 35,
-  "open_count": 35,
+  "updated_at": "2026-11-04 16:05 KST",
+  "count": 36,
+  "open_count": 36,
   "soon_count": 0,
   "closed_count": 0,
   "items": [
@@ -264,6 +264,15 @@
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0072",
       "pbancId": "2026-N-0072",
+      "pbancSn": "1"
+    },
+    {
+      "title": "[전북] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집 공고",
+      "status": "접수중",
+      "start": "2026-04-02 09:00 ~ 2026-12-31 17:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0070",
+      "pbancId": "2026-N-0070",
       "pbancSn": "1"
     },
     {
