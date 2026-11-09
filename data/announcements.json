@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-08 15:48 KST",
-  "count": 32,
-  "open_count": 32,
+  "updated_at": "2026-11-09 16:25 KST",
+  "count": 33,
+  "open_count": 33,
   "soon_count": 0,
   "closed_count": 0,
   "items": [
@@ -84,6 +84,15 @@
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0185",
       "pbancId": "2026-N-0185",
+      "pbancSn": "1"
+    },
+    {
+      "title": "[세메스] 2026 대중소 상생형 스마트공장 구축 사업_기초",
+      "status": "접수중",
+      "start": "2026-08-31 00:00 ~ 2026-11-11 23:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0183",
+      "pbancId": "2026-N-0183",
       "pbancSn": "1"
     },
     {
