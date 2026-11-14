@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-13 16:28 KST",
-  "count": 31,
-  "open_count": 31,
+  "updated_at": "2026-11-14 16:11 KST",
+  "count": 29,
+  "open_count": 29,
   "soon_count": 0,
   "closed_count": 0,
   "items": [
@@ -12,15 +12,6 @@
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0224",
       "pbancId": "2026-N-0224",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[LG전자] 2026년도 대중소 상생형(AI트랙) 스마트공장 구축지원 (유형1) (2차)",
-      "status": "접수중",
-      "start": "2026-11-02 09:00 ~ 2026-11-13 23:50",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0222",
-      "pbancId": "2026-N-0222",
       "pbancSn": "1"
     },
     {
@@ -48,15 +39,6 @@
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0204",
       "pbancId": "2026-N-0204",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[두산밥캣코리아] 2026 대중소 상생형 스마트공장 구축 사업_AI트랙(고도화)",
-      "status": "접수중",
-      "start": "2026-09-21 00:00 ~ 2026-11-13 23:50",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0199",
-      "pbancId": "2026-N-0199",
       "pbancSn": "1"
     },
     {
@@ -132,21 +114,21 @@
       "pbancSn": "1"
     },
     {
-      "title": "[강원] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고",
-      "status": "접수중",
-      "start": "2026-04-24 16:00 ~ 2026-12-31 18:00",
-      "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0087",
-      "pbancId": "2026-N-0087",
-      "pbancSn": "1"
-    },
-    {
       "title": "[포항] 2026년 제조DX멘토단 활용지원(구축지도) 도입기업 모집공고",
       "status": "접수중",
       "start": "2026-05-19 00:00 ~ 2026-12-31 00:00",
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0099",
       "pbancId": "2026-N-0099",
+      "pbancSn": "1"
+    },
+    {
+      "title": "[강원] 2026년 제조DX멘토단 활용지원사업(구축지도) 도입기업 모집 공고",
+      "status": "접수중",
+      "start": "2026-04-24 16:00 ~ 2026-12-31 18:00",
+      "end": "",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0087",
+      "pbancId": "2026-N-0087",
       "pbancSn": "1"
     },
     {
