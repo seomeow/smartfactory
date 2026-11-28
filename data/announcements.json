@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-27 18:16 KST",
-  "count": 39,
-  "open_count": 38,
+  "updated_at": "2026-11-28 17:34 KST",
+  "count": 38,
+  "open_count": 37,
   "soon_count": 1,
   "closed_count": 0,
   "items": [
@@ -69,12 +69,12 @@
       "pbancSn": "2"
     },
     {
-      "title": "[농협경제지주] 대중소 상생형 스마트공장 구축지원사업_AI트랙",
+      "title": "[농협경제지주] 대중소 상생형 스마트공장 구축지원사업_기초",
       "status": "접수중",
       "start": "2026-10-01 00:00 ~ 2026-11-30 23:40",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0219",
-      "pbancId": "2026-N-0219",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0217",
+      "pbancId": "2026-N-0217",
       "pbancSn": "1"
     },
     {
@@ -87,12 +87,12 @@
       "pbancSn": "1"
     },
     {
-      "title": "[농협경제지주] 대중소 상생형 스마트공장 구축지원사업_기초",
+      "title": "[농협경제지주] 대중소 상생형 스마트공장 구축지원사업_AI트랙",
       "status": "접수중",
       "start": "2026-10-01 00:00 ~ 2026-11-30 23:40",
       "end": "",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0217",
-      "pbancId": "2026-N-0217",
+      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0219",
+      "pbancId": "2026-N-0219",
       "pbancSn": "1"
     },
     {
@@ -165,15 +165,6 @@
       "end": "",
       "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0147",
       "pbancId": "2026-N-0147",
-      "pbancSn": "1"
-    },
-    {
-      "title": "[LS일렉트릭] 대중소 상생형 스마트공장 구축지원사업_클라우드B",
-      "status": "접수중",
-      "start": "2026-07-15 00:00 ~ 2026-07-16 12:00",
-      "end": "2026-07-22 09:00 ~ 2026-11-27 23:40",
-      "link": "https://www.smart-factory.kr/usr/bg/ba/ma/bsnsPbancDtl?pbancId=2026-N-0144",
-      "pbancId": "2026-N-0144",
       "pbancSn": "1"
     },
     {
